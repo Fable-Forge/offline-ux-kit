@@ -1,0 +1,1 @@
+{"name":"offline-ux-kit","private":true,"description":"Offline UX recorder, reports and agent skill","license":"MIT","scripts":{"build":"node scripts/build.cjs","test":"node scripts/build.cjs && node --test tests/core.test.cjs && python tests/package.test.py","test:core":"node --test tests/core.test.cjs","test:package":"python tests/package.test.py"}}

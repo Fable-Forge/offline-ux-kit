@@ -1,0 +1,14 @@
+# Offline UX Kit
+
+> Add consent-aware local UX telemetry, categorized feedback, and self-contained reports to offline HTML and static web prototypes.
+
+## Primary instructions
+
+- SKILL.md: https://github.com/Fable-Forge/offline-ux-kit/blob/main/SKILL.md
+- Installation: https://github.com/Fable-Forge/offline-ux-kit/blob/main/docs/install.md
+- Update: https://github.com/Fable-Forge/offline-ux-kit/blob/main/docs/update.md
+- Validation status: https://github.com/Fable-Forge/offline-ux-kit/blob/main/docs/VALIDATION.md
+
+## Install
+
+`npx skills add Fable-Forge/offline-ux-kit`

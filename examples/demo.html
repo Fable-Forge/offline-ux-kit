@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Offline UX · __MODE__</title>
+<style>body{margin:0;background:#f2f4ed;color:#173e34;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:60px auto;padding:30px}small{letter-spacing:2px}h1{font-size:38px;line-height:1.3}section{padding:28px;background:white;border:1px solid #d1ded2;border-radius:18px;margin:20px 0}button,input,select,textarea{font:inherit;padding:11px;border:1px solid #a7b9ad;border-radius:8px}button{background:#215b46;color:white;cursor:pointer;margin:6px}label{display:block;margin:12px 0}textarea{display:block;width:90%}#status{color:#a04320}nav{margin-top:24px}[hidden]{display:none!important}.muted{color:#5b7168;font-size:14px}</style>
+<main><small>OFFLINE UX KIT / INTERACTIVE SAMPLE</small><h1 id="title"></h1><p>体验一次，再带走一份报告。</p>
+<section id="consent"><h2>开始前 / Before you start</h2><p>只在当前浏览器记录步骤、选项、时间和反馈分类，不记录输入原文，不上传数据。导出的报告包含行为信息，请仅交给授权人员。</p><label>匿名代号 <input id="participant" value="tester-001" maxlength="60"></label><label><input id="agree" type="checkbox"> 我了解并同意本次本地记录</label><button id="start">开始 / Resume</button></section>
+<section id="app" hidden><p id="progress"></p><h2 id="question"></h2><div id="options"></div><label id="textLabel" hidden>补充说明（仅记录字数）<textarea id="reply"></textarea></label><div><button id="back" data-ux-id="back">返回</button><button id="next" data-ux-id="next">下一步</button></div><nav><label>这里有问题 <select id="feedback"><option value="unclear">看不懂 / Unclear</option><option value="navigation">不知道下一步 / Navigation</option><option value="unresponsive">按钮没反应 / Unresponsive</option><option value="other">其他 / Other</option></select></label><button id="sendFeedback" data-ux-id="feedback">记录反馈</button><label>体验评分 <select id="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label><button id="finish">结束并下载 HTML 报告</button><button id="raw">导出 JSON</button></nav></section>
+<p id="status" role="status"></p><p id="storageWarning" role="alert"></p><p class="muted">无账号、后端、CDN 或 API。刷新恢复记录，但任务从第一步重启。不要在多个标签页同时使用同一会话。</p></main>
+<script>/*__RUNTIME__*/</script>
+<script>
+(async()=>{
+const mode='__MODE__',$=id=>document.getElementById(id);let ux=null,at=0,result=null;
+const warningTimer=setInterval(()=>{if(ux)$('storageWarning').textContent=ux.warning;},2000);
+const form=[['你希望参加哪类工作坊？',['design','engineering','research']],['希望采用哪种形式？',['onsite','remote']],['补充说明',[]],['确认并完成',[]]];
+const dialogue=[['客户：你们的方案为什么比别人贵？',['explain-value','offer-discount']],['客户：我担心团队学不会。',['show-training','avoid-question']],['你准备如何回应？',[]],['演练总结',[]]];
+let steps=mode==='form'?form:dialogue;const picked={};
+$('title').textContent=mode==='form'?'工作坊报名 · 离线表单':'客户沟通 · 分支演练';
+function status(s){$('status').textContent=s+(ux?.warning?' '+ux.warning:'');}
+function show(){ux.step('step-'+at);$('progress').textContent=(at+1)+' / '+steps.length;$('question').textContent=steps[at][0];$('options').replaceChildren();steps[at][1].forEach(v=>{const b=document.createElement('button');b.textContent=(picked[at]===v?'✓ ':'')+v;b.dataset.uxId=v;b.onclick=()=>{picked[at]=v;ux.choice(v);if(mode==='dialogue'&&at===0)steps[1][0]=v==='offer-discount'?'客户：折扣结束后会涨价吗？':'客户：你能演示具体价值吗？';for(const x of $('options').children)x.textContent=(picked[at]===x.dataset.uxId?'✓ ':'')+x.dataset.uxId;};$('options').append(b);});$('back').disabled=at===0;$('textLabel').hidden=at!==2;$('next').textContent=at===3?'确认完成':'下一步';}
+$('start').onclick=async()=>{if(!$('agree').checked)return status('请先确认采集说明。');if(!/^[A-Za-z0-9_.:-]{1,60}$/.test($('participant').value))return status('请使用字母、数字、短横线组成的匿名代号。');$('start').disabled=true;
+try{let sid;try{sid=localStorage.getItem('oux-demo-'+mode);}catch(_){}sid=sid||crypto.randomUUID();ux=await OfflineUX.create({appId:'demo-'+mode,participantId:$('participant').value,sessionId:sid,buildId:'demo'});if(ux.ended){ux.dispose();sid=crypto.randomUUID();ux=await OfflineUX.create({appId:'demo-'+mode,participantId:$('participant').value,sessionId:sid,buildId:'demo'});}try{localStorage.setItem('oux-demo-'+mode,sid);}catch(_){}$('consent').hidden=true;$('app').hidden=false;ux.task(mode);show();status('本地记录已开启。');}catch(e){status(e.message);$('start').disabled=false;}};
+$('next').onclick=()=>{if(at<2&&!picked[at]){ux.track('signal',{category:'missing_choice'});return status('请先选择一个选项。');}if(at===2)ux.reply($('reply').value);if(at===3){ux.endTask('completed');$('next').disabled=true;$('back').disabled=true;status('任务已完成，可以结束并导出报告。');return;}at++;show();};
+$('back').onclick=()=>{ux.back();at=Math.max(0,at-1);show();};
+$('sendFeedback').onclick=()=>{ux.feedback($('feedback').value);status('反馈已记录。');};
+$('finish').onclick=async()=>{result=await ux.finish(Number($('rating').value));clearInterval(warningTimer);$('storageWarning').textContent=ux.warning;OfflineUX.download(mode+'-report.html',OfflineUX.report(result));$('next').disabled=true;$('back').disabled=true;$('sendFeedback').disabled=true;status('报告已生成；也可以导出原始 JSON。');};
+$('raw').onclick=async()=>OfflineUX.download(mode+'-run.json',JSON.stringify(result||await ux.snapshot(),null,2),'application/json');
+})();
+</script></html>

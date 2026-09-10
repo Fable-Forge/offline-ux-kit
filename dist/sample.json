@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "kitVersion": "main",
+    "appId": "sample",
+    "participantId": "synthetic-example",
+    "sessionId": "sample-1",
+    "buildId": "demo",
+    "batchId": "synthetic",
+    "variant": "offline-scripted",
+    "startedAt": "2026-09-10T00:00:00Z",
+    "endedAt": "2026-09-10T00:01:00Z",
+    "storageMode": "memory"
+  },
+  "events": [
+    {
+      "eventId": "sample-0",
+      "seq": 1,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 0,
+      "sincePreviousMs": 2000,
+      "name": "run_start",
+      "stepId": "",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {}
+    },
+    {
+      "eventId": "sample-1",
+      "seq": 2,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 2000,
+      "sincePreviousMs": 2000,
+      "name": "task_start",
+      "stepId": "",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {}
+    },
+    {
+      "eventId": "sample-2",
+      "seq": 3,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 4000,
+      "sincePreviousMs": 2000,
+      "name": "step_enter",
+      "stepId": "preferences",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {}
+    },
+    {
+      "eventId": "sample-3",
+      "seq": 4,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 6000,
+      "sincePreviousMs": 2000,
+      "name": "choice",
+      "stepId": "preferences",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {
+        "optionId": "a",
+        "changed": false
+      }
+    },
+    {
+      "eventId": "sample-4",
+      "seq": 5,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 8000,
+      "sincePreviousMs": 2000,
+      "name": "time_slice",
+      "stepId": "preferences",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {
+        "activeMs": 8000,
+        "visibleMs": 8000,
+        "hiddenMs": 0
+      }
+    },
+    {
+      "eventId": "sample-5",
+      "seq": 6,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 10000,
+      "sincePreviousMs": 2000,
+      "name": "back",
+      "stepId": "preferences",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {}
+    },
+    {
+      "eventId": "sample-6",
+      "seq": 7,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 12000,
+      "sincePreviousMs": 2000,
+      "name": "choice",
+      "stepId": "preferences",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {
+        "optionId": "b",
+        "previousOptionId": "a",
+        "changed": true
+      }
+    },
+    {
+      "eventId": "sample-7",
+      "seq": 8,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 14000,
+      "sincePreviousMs": 2000,
+      "name": "feedback",
+      "stepId": "preferences",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {
+        "category": "unclear"
+      }
+    },
+    {
+      "eventId": "sample-8",
+      "seq": 9,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 16000,
+      "sincePreviousMs": 2000,
+      "name": "step_enter",
+      "stepId": "review",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {}
+    },
+    {
+      "eventId": "sample-9",
+      "seq": 10,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 18000,
+      "sincePreviousMs": 2000,
+      "name": "time_slice",
+      "stepId": "review",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {
+        "activeMs": 8000,
+        "visibleMs": 8000,
+        "hiddenMs": 0
+      }
+    },
+    {
+      "eventId": "sample-10",
+      "seq": 11,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 20000,
+      "sincePreviousMs": 2000,
+      "name": "task_end",
+      "stepId": "review",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {
+        "status": "completed"
+      }
+    },
+    {
+      "eventId": "sample-11",
+      "seq": 12,
+      "timestamp": "2026-09-10T00:00:00Z",
+      "elapsedMs": 22000,
+      "sincePreviousMs": 2000,
+      "name": "run_end",
+      "stepId": "",
+      "taskId": "sample-form",
+      "taskRunId": "task-1",
+      "data": {}
+    }
+  ]
+}

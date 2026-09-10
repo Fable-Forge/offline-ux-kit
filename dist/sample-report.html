@@ -1,0 +1,99 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'"><title>Offline UX Report</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f5f2;color:#1e3430;font:15px/1.6 system-ui,sans-serif}header{background:#123d35;color:white;padding:48px max(24px,calc((100vw - 1120px)/2))}h1{font-size:36px;margin:10px 0}.eyebrow{letter-spacing:3px;font-size:11px;color:#a7ce9e}main{max-width:1168px;margin:auto;padding:30px 24px}nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}button,.button,select{font:inherit;border:1px solid #bccbc5;background:white;border-radius:8px;padding:9px 14px;color:inherit;cursor:pointer}input[type=file]{display:block;max-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:22px 0}.card,section{background:white;border:1px solid #dbe3de;border-radius:14px;padding:20px}.card strong{display:block;font-size:28px}.card span{font-size:12px;color:#536e65}section{margin:18px 0}h2{font-size:19px}table{border-collapse:collapse;width:100%;font-size:13px}td,th{text-align:left;border-bottom:1px solid #e3e9e4;padding:10px;overflow-wrap:anywhere}.scroll{overflow:auto;max-height:480px}.bar{display:grid;grid-template-columns:minmax(110px,1fr) 3fr 70px;gap:12px;align-items:center;margin:12px 0}.track{height:14px;background:#edf1ee;border-radius:8px;overflow:hidden}.fill{height:100%;background:#3c846b}.path{display:flex;flex-wrap:wrap;gap:8px}.chip{background:#e7eee6;padding:5px 10px;border-radius:6px}footer{font-size:12px;color:#536e65;margin:32px 0}.issue{display:flex;gap:28px;align-items:center;flex-wrap:wrap}svg{max-width:200px}summary{cursor:pointer}#status{color:#8c4516} @media print{nav,select{display:none}.scroll{max-height:none}section{break-inside:avoid}header{padding:20px}}</style><header><div class="eyebrow">OFFLINE UX KIT · LOCAL EVIDENCE</div><h1>体验，从过程看见。</h1><p>离线体验报告 / Offline experience report</p></header><main><nav><button id="json">导出 JSON</button><button id="md">Markdown 摘要</button><button id="print">打印 / PDF</button></nav><p id="status" role="status"></p><label>版本 / 批次 / 模式 <select id="cohort"></select></label><div id="view"></div><footer>长时间停留与重复点击是疑似信号，不是体验差的结论。未采集原始输入。报告仍包含行为数据，请仅分享给授权人员。<br>Active time uses a 20s default idle cutoff. Closed-browser gaps are excluded.</footer></main><script type="application/json" id="report-data">[{"meta":{"schemaVersion":1,"kitVersion":"main","appId":"sample","participantId":"synthetic-example","sessionId":"sample-1","buildId":"demo","batchId":"synthetic","variant":"offline-scripted","startedAt":"2026-09-10T00:00:00Z","endedAt":"2026-09-10T00:01:00Z","storageMode":"memory"},"events":[{"eventId":"sample-0","seq":1,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":0,"sincePreviousMs":2000,"name":"run_start","stepId":"","taskId":"sample-form","taskRunId":"task-1","data":{}},{"eventId":"sample-1","seq":2,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":2000,"sincePreviousMs":2000,"name":"task_start","stepId":"","taskId":"sample-form","taskRunId":"task-1","data":{}},{"eventId":"sample-2","seq":3,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":4000,"sincePreviousMs":2000,"name":"step_enter","stepId":"preferences","taskId":"sample-form","taskRunId":"task-1","data":{}},{"eventId":"sample-3","seq":4,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":6000,"sincePreviousMs":2000,"name":"choice","stepId":"preferences","taskId":"sample-form","taskRunId":"task-1","data":{"optionId":"a","changed":false}},{"eventId":"sample-4","seq":5,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":8000,"sincePreviousMs":2000,"name":"time_slice","stepId":"preferences","taskId":"sample-form","taskRunId":"task-1","data":{"activeMs":8000,"visibleMs":8000,"hiddenMs":0}},{"eventId":"sample-5","seq":6,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":10000,"sincePreviousMs":2000,"name":"back","stepId":"preferences","taskId":"sample-form","taskRunId":"task-1","data":{}},{"eventId":"sample-6","seq":7,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":12000,"sincePreviousMs":2000,"name":"choice","stepId":"preferences","taskId":"sample-form","taskRunId":"task-1","data":{"optionId":"b","previousOptionId":"a","changed":true}},{"eventId":"sample-7","seq":8,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":14000,"sincePreviousMs":2000,"name":"feedback","stepId":"preferences","taskId":"sample-form","taskRunId":"task-1","data":{"category":"unclear"}},{"eventId":"sample-8","seq":9,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":16000,"sincePreviousMs":2000,"name":"step_enter","stepId":"review","taskId":"sample-form","taskRunId":"task-1","data":{}},{"eventId":"sample-9","seq":10,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":18000,"sincePreviousMs":2000,"name":"time_slice","stepId":"review","taskId":"sample-form","taskRunId":"task-1","data":{"activeMs":8000,"visibleMs":8000,"hiddenMs":0}},{"eventId":"sample-10","seq":11,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":20000,"sincePreviousMs":2000,"name":"task_end","stepId":"review","taskId":"sample-form","taskRunId":"task-1","data":{"status":"completed"}},{"eventId":"sample-11","seq":12,"timestamp":"2026-09-10T00:00:00Z","elapsedMs":22000,"sincePreviousMs":2000,"name":"run_end","stepId":"","taskId":"sample-form","taskRunId":"task-1","data":{}}]}]</script><script>const validate=function validate(run) {
+    const allowed=new Set(['optionId','previousOptionId','changed','length','durationMs','status','code','category','reason','requestId','x','y','rating','activeMs','visibleMs','hiddenMs','count','inputMode']);
+    if (!run || run.meta?.schemaVersion !== 1 || !Array.isArray(run.events) || run.events.length > 100000) throw Error('Unsupported or oversized run');
+    if (typeof run.meta.sessionId !== 'string' || !idPattern.test(run.meta.sessionId)) throw Error('Invalid metadata: sessionId');
+    for(const k of ['appId','participantId','batchId','buildId','variant']) if(typeof run.meta[k]!=='string'||!idPattern.test(run.meta[k]))throw Error('Invalid metadata: '+k);
+    let seq = 0, elapsed = 0;
+    const seen = new Set();
+    for (const e of run.events) {
+      if (!e || !Number.isInteger(e.seq) || e.seq <= seq || !Number.isFinite(e.elapsedMs) || e.elapsedMs < elapsed || typeof e.eventId !== 'string' || !idPattern.test(e.eventId) || seen.has(e.eventId) || typeof e.name !== 'string' || !idPattern.test(e.name) || !e.data || typeof e.data !== 'object') throw Error('Invalid event order or shape');
+      for(const k of ['taskId','taskRunId','stepId'])if(typeof e[k]!=='string'||(e[k]!==''&&!idPattern.test(e[k])))throw Error('Invalid event context');
+      if(Array.isArray(e.data))throw Error('Invalid event metadata');
+      for(const [k,v] of Object.entries(e.data))if(!allowed.has(k)||!(['string','number','boolean'].includes(typeof v))||(typeof v==='number'&&!Number.isFinite(v))||(typeof v==='string'&&!/^[A-Za-z0-9_.:-]{1,80}$/.test(v)))throw Error('Invalid metadata value');
+      for(const k of ['activeMs','visibleMs','hiddenMs','durationMs'])if(e.data[k]!==undefined&&(!Number.isFinite(e.data[k])||e.data[k]<0))throw Error('Invalid duration');
+      seen.add(e.eventId); seq = e.seq; elapsed = e.elapsedMs;
+    }
+    return run;
+  };const summarize=function summarize(run) {
+    validate(run);
+    const out = {events:run.events.length, activeMs:0,visibleMs:0,hiddenMs:0,choices:0,changes:0,backs:0,feedback:0,signals:0,completed:0,abandoned:0,aiSuccess:0,aiError:0,aiFallback:0,aiDurations:[],steps:Object.create(null),issues:Object.create(null),path:[],tasks:[]};
+    for (const e of run.events) {
+      const d = e.data;
+      if (e.name === 'time_slice') {
+        for (const k of ['activeMs','visibleMs','hiddenMs']) out[k] += Math.max(0,Number(d[k]) || 0);
+        const k = (e.taskId || '-') + '/' + (e.stepId || '-');
+        out.steps[k] = (out.steps[k] || 0) + Math.max(0,Number(d.activeMs)||0);
+      }
+      if (e.name === 'choice') {out.choices++; if(d.changed) out.changes++;}
+      if (e.name === 'back') out.backs++;
+      if (e.name === 'feedback') out.feedback++;
+      if (e.name === 'signal') out.signals++;
+      if (e.name === 'feedback' || e.name === 'signal') out.issues[d.category || 'other'] = (out.issues[d.category || 'other'] || 0) + 1;
+      if (e.name === 'task_end') {out.tasks.push({id:e.taskId,runId:e.taskRunId,status:d.status}); if(d.status === 'completed') out.completed++; else out.abandoned++;}
+      if (e.name === 'step_enter') out.path.push(e.stepId);
+      if (e.name === 'ai_end') {if(d.status === 'success') out.aiSuccess++; else out.aiError++; if(Number.isFinite(d.durationMs)) out.aiDurations.push(d.durationMs);}
+      if (e.name === 'ai_fallback') out.aiFallback++;
+    }
+    return out;
+  };const parseImport=function parseImport(text,filename){
+    if(text.length>10*1024*1024)throw Error('File exceeds 10 MiB');
+    let raw;
+    if(filename.toLowerCase().endsWith('.html')){
+      const match=text.match(/<script\s+type="application\/json"\s+id="report-data">([\s\S]*?)<\/script>/i);
+      if(!match)throw Error('No report-data block');raw=JSON.parse(match[1]);
+    }else raw=JSON.parse(text);
+    const list=Array.isArray(raw)?raw:[raw];
+    if(list.length>200)throw Error('200 session limit');list.forEach(validate);return list;
+  };const mergeRuns=function mergeRuns(existing,incoming){
+    const result=[...existing];let added=0,duplicates=0;
+    for(const r of incoming){validate(r);const old=result.find(x=>x.meta.appId===r.meta.appId&&x.meta.sessionId===r.meta.sessionId);
+      if(old){if(JSON.stringify(old)!==JSON.stringify(r))throw Error('Conflicting snapshot; import latest in a fresh reviewer');duplicates++;}
+      else{if(result.length>=200)throw Error('200 session limit');result.push(r);added++;}
+    }
+    return {runs:result,added,duplicates};
+  };const download=function download(filename,text,type='text/html') {
+    const url=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  };(function reportApp(){
+    let all=JSON.parse(document.getElementById('report-data').textContent);all.forEach(validate);
+    const $=id=>document.getElementById(id), make=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
+    const key=r=>JSON.stringify([r.meta.appId,r.meta.buildId,r.meta.batchId,r.meta.variant]);
+    const median=a=>{const b=[...a].sort((x,y)=>x-y);return b.length?(b[Math.floor((b.length-1)/2)]+b[Math.ceil((b.length-1)/2)])/2:0;};
+    let current=[], summaries=[];
+    function table(parent,heads,rows){const wrap=make('div',undefined,'scroll'),t=make('table'),h=make('tr');heads.forEach(x=>h.append(make('th',x)));t.append(h);rows.forEach(row=>{const tr=make('tr');row.forEach(x=>tr.append(make('td',x)));t.append(tr);});wrap.append(t);parent.append(wrap);}
+    function section(title){const s=make('section');s.append(make('h2',title));$('view').append(s);return s;}
+    function bars(parent,entries){const max=Math.max(1,...entries.map(x=>x[1]));entries.forEach(([label,n])=>{const row=make('div',undefined,'bar'),track=make('div',undefined,'track'),fill=make('div',undefined,'fill');fill.style.width=(100*n/max)+'%';track.append(fill);row.append(make('span',label),track,make('span',n.toFixed(1)+'s'));parent.append(row);});}
+    function render(){
+      current=all.filter(r=>key(r)===$('cohort').value);summaries=current.map(summarize);$('view').replaceChildren();
+      if(!current.length){section('还没有数据 / Import a run to begin').append(make('p','拖入单人 HTML 报告或 JSON；文件只在当前浏览器内解析，不执行导入脚本。'));return;}
+      const sum=k=>summaries.reduce((n,s)=>n+(s[k]||0),0), cards=make('div',undefined,'cards');
+      [['会话 Sessions',current.length],['活跃 Active',Math.round(sum('activeMs')/1000)+'s'],['完成任务',sum('completed')],['改选',sum('changes')],['反馈',sum('feedback')],['疑似信号',sum('signals')]].forEach(([label,n])=>{const c=make('div',undefined,'card');c.append(make('strong',n),make('span',label));cards.append(c);});$('view').append(cards);
+      const funnel=section('01 · 有序流程 / Ordered funnel');
+      const stages=['run_start','task_start','step_enter','task_end'];
+      table(funnel,['阶段','到达会话数','会话占比'],stages.map((name,i)=>{const n=current.filter(r=>{let index=-1;return stages.slice(0,i+1).every(stage=>{index=r.events.findIndex((e,j)=>j>index&&e.name===stage&&(stage!=='task_end'||e.data.status==='completed'));return index>=0;});}).length;return [name,n,current.length===1?(n?'已到达':'未到达'):(100*n/current.length).toFixed(1)+'%'];}));
+      const dwell=section('02 · 步骤活跃时间 / Step active time');const steps=Object.create(null);summaries.forEach(s=>Object.entries(s.steps).forEach(([k,v])=>{(steps[k] ||= []).push(v);}));
+      bars(dwell,Object.entries(steps).map(([k,v])=>[k,median(v)/1000]));dwell.append(make('p','柱形：到访会话的中位活跃秒数；空白步骤表示未进入任务。'));
+      const issues=Object.create(null);summaries.forEach(s=>Object.entries(s.issues).forEach(([k,v])=>issues[k]=(issues[k]||0)+v));
+      const issueSection=section('03 · 反馈与疑似信号 / Feedback & signals');
+      if(Object.keys(issues).length){
+        const wrap=make('div',undefined,'issue'),ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 120 120');svg.setAttribute('role','img');svg.setAttribute('aria-label','Issue distribution');let offset=0,total=Object.values(issues).reduce((a,b)=>a+b,0);const colors=['#28785f','#bc8a35','#708ad0','#be7560','#98b758'];
+        Object.entries(issues).forEach(([k,v],i)=>{const c=document.createElementNS(ns,'circle');for(const [a,b]of Object.entries({cx:60,cy:60,r:43,fill:'none',stroke:colors[i%colors.length],'stroke-width':18,'stroke-dasharray':(v/total*270.18)+' '+270.18,'stroke-dashoffset':-offset,transform:'rotate(-90 60 60)'}))c.setAttribute(a,b);offset+=v/total*270.18;svg.append(c);});wrap.append(svg);issueSection.append(wrap);table(wrap,['类别','次数'],Object.entries(issues));
+      }else issueSection.append(make('p','本批次没有记录反馈或疑似信号。'));
+      const ai=summaries.some(s=>s.aiSuccess+s.aiError+s.aiFallback);
+      if(ai){const s=section('04 · AI 请求 / AI requests');table(s,['成功','失败','Fallback','延迟中位 ms'],[[sum('aiSuccess'),sum('aiError'),sum('aiFallback'),Math.round(median(summaries.flatMap(s=>s.aiDurations)))]]);}
+      const choices=section('选择分布 / Choice distribution'),counts=Object.create(null);current.forEach(r=>r.events.filter(e=>e.name==='choice').forEach(e=>{const k=[e.taskId,e.stepId,e.data.optionId].join(' / ');counts[k]=(counts[k]||0)+1;}));table(choices,['任务 / 步骤 / 选项','选择次数（含重复）'],Object.entries(counts));
+      const sessions=section('会话证据 / Session evidence');
+      current.forEach((r,i)=>{const detail=make('details'),summary=make('summary',r.meta.participantId+' · '+r.meta.sessionId+' · '+(r.meta.endedAt?'已结束':'未结束'));detail.append(summary);const path=make('div',undefined,'path');summaries[i].path.forEach(x=>path.append(make('span',x,'chip')));detail.append(path);table(detail,['#','秒','任务','步骤','事件','元数据'],r.events.map(e=>[e.seq,(e.elapsedMs/1000).toFixed(2),e.taskId,e.stepId,e.name,JSON.stringify(e.data)]));sessions.append(detail);});
+    }
+    function refresh(){const selected=$('cohort').value;$('cohort').replaceChildren();[...new Set(all.map(key))].forEach(k=>{const o=make('option',JSON.parse(k).join(' / '));o.value=k;$('cohort').append(o);});if([...$('cohort').options].some(o=>o.value===selected))$('cohort').value=selected;render();}
+    $('cohort').onchange=render;$('print').onclick=()=>window.print();
+    $('json').onclick=()=>download('offline-ux-runs.json',JSON.stringify(current,null,2),'application/json');
+    $('md').onclick=()=>{const lines=['# Offline UX summary','','疑似信号需要结合任务内容和主动反馈解释。',''];current.forEach((r,i)=>{const s=summaries[i];lines.push('## '+r.meta.participantId,'','- Session: '+r.meta.sessionId,'- Active seconds: '+(s.activeMs/1000).toFixed(1),'- Completed tasks: '+s.completed,'- Changed choices: '+s.changes,'- Feedback: '+s.feedback,'- Signals: '+s.signals,'');});download('offline-ux-summary.md',lines.join('\n'),'text/markdown');};
+    if($('files')) $('files').onchange=async event=>{
+      const errors=[];let added=0,duplicates=0;
+      for(const f of event.target.files){try{if(f.size>10*1024*1024)throw Error('File exceeds 10 MiB');
+        const result=mergeRuns(all,parseImport(await f.text(),f.name));all=result.runs;added+=result.added;duplicates+=result.duplicates;
+      }catch(e){errors.push(f.name+': '+e.message);}}
+      $('status').textContent=added+' imported, '+duplicates+' duplicates. '+errors.join(' | ');refresh();
+    };
+    refresh();
+  })();</script></html>

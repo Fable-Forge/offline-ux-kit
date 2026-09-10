@@ -1,0 +1,4 @@
+interface:
+  display_name: "Offline UX Kit"
+  short_description: "Instrument offline web apps and export local UX reports"
+  default_prompt: "Use $offline-ux-kit to add private offline UX telemetry and a self-contained report to this web app."
