@@ -9,7 +9,7 @@ REQUIRED = [
     "AGENTS.md",
     "SKILL.md",
     "README.md",
-    "README.en.md",
+    "README.zh-CN.md",
     "docs/install.md",
     "docs/update.md",
     "docs/uninstall.md",
