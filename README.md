@@ -6,6 +6,14 @@ Local UX evidence for offline HTML and static web prototypes. An agent skill plu
 
 **Status: beta developer preview.** Node tests pass; real-browser file://, visual layout and Windows acceptance are pending. Do not interpret unit-test coverage as production certification.
 
+<p align="center">
+  <a href="https://github.com/Fable-Forge/offline-ux-kit/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Fable-Forge/offline-ux-kit?style=social"></a>
+</p>
+
+<p align="center">
+  <strong>If this skill helps you ship better work, a ⭐ Star is free and helps others find it.</strong>
+</p>
+
 ## Quick install
 
 Give this instruction to an Agent with command-line access:

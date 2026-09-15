@@ -6,6 +6,14 @@
 
 当前为 **beta 开发预览版**。自动代码测试已通过，真实浏览器 file://、页面视觉和 Windows 验收尚未完成。详见 [验收记录](docs/VALIDATION.md)。
 
+<p align="center">
+  <a href="https://github.com/Fable-Forge/offline-ux-kit/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Fable-Forge/offline-ux-kit?style=social"></a>
+</p>
+
+<p align="center">
+  <strong>如果这个 Skill 帮你更顺利地完成工作，欢迎点个 ⭐，也能帮助更多人发现它。</strong>
+</p>
+
 ## 快速安装
 
 把下面这句话交给支持命令行的 Agent：
